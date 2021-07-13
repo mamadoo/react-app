@@ -1,13 +1,18 @@
 {
   "name": "my-app",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "date-fns": "^2.22.1",
+    "date-fns-jalali": "^2.22.1-0",
+    "date-fns-tz": "^1.1.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
@@ -15,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "commit": "cz",
+    "semantic-release": "semantic-release"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +41,25 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "3.3.0",
+    "husky": "^7.0.1",
+    "semantic-release": "^17.4.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mamadoo/react-app.git"
   }
 }
